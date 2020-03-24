@@ -115,11 +115,10 @@ export class MapsComponent implements OnInit {
 
     var marker = new google.maps.Marker({
         position: myLatlng,
-        title: "Hello World!"
+        title: "Test"
     });
 
     // To add the marker to the map, call setMap();
     marker.setMap(map);
   }
-
 }
