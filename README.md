@@ -4,7 +4,7 @@
   <body>
     <h1>AnimeStats</h1>
     <h2># Améliorations depuis la soutenance (fin le 27 Avril) :</h2>
-    <h3>Mise à jour du back end : <ul>
+    <h3>Mise à jour du back-end : <ul>
       <li>Nous gérons nos requettes grâce à Jquerry et ses requettes AJAX, nous les utilisons de manière asynchrone pour eviter de ralentir la page.</li>
       <li>Lorsqu'un utilisateur choisit un nom d'anime dans la barre de recherche, on regarde s'il est déja présent dans la BDD et sinon on procède a l'envoie de requette pour remplir la BDD pour ensuite modifier l'affichage.</li>
       <li>L'API kitsu (pour recupérer les infos d'un anime) fonctionne parfaitement sur notre site et met bien à jour les infos selon les recherches.</li>
