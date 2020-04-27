@@ -282,10 +282,38 @@ function APIKitsu(name :String,info: Info){
 }
 
 
-
+/*ça ne marche pas ce api*/
 function APITwitter(nom :String,info: Info){
     //envois requette et recup info
+    $.ajax({
+        url: "https://api.twitter.com/1.1/search/tweets.json?q=?",
+        type: "GET",
+        data: { cursor: "-1", 
+                screen_name: "twitterapi" },
+        cache: false,
+        dataType: 'json',
+        /*chercher les textes de twitters*/
+        success: function(data) { 
+            alert('hello!'); 
+            var tweets = data.statuses;
+            for(var i =0; i< tweets.length; i++){
+                console.log(tweets[i].text);
+            }
+        },
 
+        error: function(html) { alert(html); },
+        beforeSend: setHeader
+    });
+
+    /*Header permet avoir authorization à chaque fois untiliser l'api */
+    function setHeader(xhr) {
+        if(xhr && xhr.overrideMimeType) {
+            xhr.overrideMimeType("application/j-son;charset=UTF-8");
+        }
+        alert('1'); 
+        xhr.setRequestHeader('Authorization','Bearer AAAAAAAAAAAAAAAAAAAAAG5YCgEAAAAAUGjlt1IEIW3mJPdjXy63I1qxnB0%3DtcaDsrj69CZX8Wo5G1kVi8IKVzDWCgvyIbRWVVTQ4E1vocK9m5');
+    }
+    alert('2'); 
     console.log("twitter"+counterAsync);
     callBackFonct(info);
 
