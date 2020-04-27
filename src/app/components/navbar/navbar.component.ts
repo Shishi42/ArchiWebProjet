@@ -48,7 +48,7 @@ export class NavbarComponent implements OnInit {
     }
 
     ngOnInit(){
-      /*this.listTitles = ROUTES.filter(listTitle => listTitle);
+      this.listTitles = ROUTES.filter(listTitle => listTitle);
       const navbar: HTMLElement = this.element.nativeElement;
       this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
       this.router.events.subscribe((event) => {
@@ -58,12 +58,12 @@ export class NavbarComponent implements OnInit {
            $layer.remove();
            this.mobile_menu_visible = 0;
          }
-     });*/
+     });
      
     }
 
     sidebarOpen() {
-        /*const toggleButton = this.toggleButton;
+        const toggleButton = this.toggleButton;
         const body = document.getElementsByTagName('body')[0];
         setTimeout(function(){
             toggleButton.classList.add('toggled');
@@ -71,18 +71,18 @@ export class NavbarComponent implements OnInit {
 
         body.classList.add('nav-open');
 
-        this.sidebarVisible = true;*/
+        this.sidebarVisible = true;
     };
     sidebarClose() {
-        /*const body = document.getElementsByTagName('body')[0];
+        const body = document.getElementsByTagName('body')[0];
         this.toggleButton.classList.remove('toggled');
         this.sidebarVisible = false;
-        body.classList.remove('nav-open');*/
+        body.classList.remove('nav-open');
     };
     sidebarToggle() {
         // const toggleButton = this.toggleButton;
         // const body = document.getElementsByTagName('body')[0];
-        /*var $toggle = document.getElementsByClassName('navbar-toggler')[0];
+        var $toggle = document.getElementsByClassName('navbar-toggler')[0];
 
         if (this.sidebarVisible === false) {
             this.sidebarOpen();
@@ -134,11 +134,11 @@ export class NavbarComponent implements OnInit {
             body.classList.add('nav-open');
             this.mobile_menu_visible = 1;
 
-        }*/
+        }
     };
 
     getTitle(){
-      /*var titlee = this.location.prepareExternalUrl(this.location.path());
+      var titlee = this.location.prepareExternalUrl(this.location.path());
       if(titlee.charAt(0) === '#'){
           titlee = titlee.slice( 1 );
       }
@@ -148,7 +148,7 @@ export class NavbarComponent implements OnInit {
               return this.listTitles[item].title;
           }
       }
-      return 'Dashboard';*/
+      return 'Dashboard';
     }
 
     
@@ -265,7 +265,7 @@ function APIKitsu(name :String,info: Info){
                 callBackFonct(info);
 
             }else{
-                console.log(json.data);
+                //console.log(json.data);
                 alert("Aucune info dans la BD ni dans l'API Kitsu pour "+name);
             }
 
@@ -294,14 +294,14 @@ function APITwitter(nom :String,info: Info){
         dataType: 'json',
         /*chercher les textes de twitters*/
         success: function(data) { 
-            alert('hello!'); 
+            //alert('hello!'); 
             var tweets = data.statuses;
             for(var i =0; i< tweets.length; i++){
                 console.log(tweets[i].text);
             }
         },
 
-        error: function(html) { alert(html); },
+        error: function(html) { /*alert(html);*/ },
         beforeSend: setHeader
     });
 
@@ -310,10 +310,12 @@ function APITwitter(nom :String,info: Info){
         if(xhr && xhr.overrideMimeType) {
             xhr.overrideMimeType("application/j-son;charset=UTF-8");
         }
-        alert('1'); 
+        //alert('1'); 
         xhr.setRequestHeader('Authorization','Bearer AAAAAAAAAAAAAAAAAAAAAG5YCgEAAAAAUGjlt1IEIW3mJPdjXy63I1qxnB0%3DtcaDsrj69CZX8Wo5G1kVi8IKVzDWCgvyIbRWVVTQ4E1vocK9m5');
     }
-    alert('2'); 
+    //alert('2'); 
+    
+    
     console.log("twitter"+counterAsync);
     callBackFonct(info);
 
